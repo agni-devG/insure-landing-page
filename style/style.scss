@@ -1,0 +1,318 @@
+@import 'variables';
+@import 'global';
+
+body{
+    background-color: white;
+}
+
+// XXXXXXXXXXXXXXXXXXXXXXXXXXXX NAV STARTS HERE XXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+nav{
+    padding: 20px $padding;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .logo{
+        max-width:90px;
+        height: auto;
+    }
+    .nav-toggle{
+        cursor: pointer;
+        display: none;
+    }
+    .nav-links{
+        display: flex;
+        align-items: center;
+        .nav-itmes{
+            text-transform: uppercase;
+            font-family: $karla;
+            font-weight: 600;
+            margin: 0 15px;
+            font-size: .75em;
+            letter-spacing: 1px;
+            color:#372f3bb7;
+            cursor:pointer;
+            transition: all 200ms ease-out;
+            &:hover{
+                color: $Dark-Violet;
+            }
+        }
+    }
+}
+.hidden-links{
+    text-align: center;
+    background: $Dark-Grayish-Violet url(../images/bg-pattern-mobile-nav.svg) no-repeat bottom right;
+    background-size: 400px;
+    padding: 15px 0 250px  0;
+    display: none;
+    transition: all 200ms ease-in-out;
+    .hidden-itmes{
+        color: white;
+        text-transform: uppercase;
+        font-family: $karla;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        cursor:pointer;
+        transition: all 200ms ease-out;
+        margin: 30px 0;
+    }
+    .hidden-btn{
+        border: 2px solid white;
+        color: white;
+        padding: 10px 90px;
+    }
+}
+@media screen and (max-width:376px) {
+    nav{
+        padding: 20px $padding-sm;
+        .nav-links{
+            display: none;
+        }
+        .nav-toggle{
+            display: block;
+        }
+    }
+}
+
+// XXXXXXXXXXXXXXXXXXXXXXXXXXXX NAV ENDS HERE XXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+// XXXXXXXXXXXXXXXXXXXXXXXXXXXX HERO STARTS HERE XXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+.hero{
+    position: relative;
+    padding: 100px $padding;
+    color: white;
+    background: url(../images/bg-pattern-intro-left-desktop.svg)  no-repeat left 300px, 
+                url(../images/bg-pattern-intro-right-desktop.svg) no-repeat right -70px,
+                $Dark-Violet;
+    background-size: auto,390px;
+    hr{
+        float: left;
+        width: 13%;
+        background: white;
+        margin: 0;
+    }
+    .copy{
+        width: 45%;
+        h1{
+            font-family: $display;
+            font-size: 4em;
+
+            font-weight: 300;
+            line-height: 57px;
+        }
+        p{
+            font-family: $karla;
+            line-height: 24px;
+            font-size: .9em;
+        }
+        .hero-btn{
+            border: 2px solid white;
+            color: white;
+            &:hover{
+                background-color: white;
+                color: $Dark-Violet;
+            }
+        }
+    }
+    .hero-img{
+        display: block;
+        position: absolute;
+        max-width: 470px;
+        height: auto;
+        right: $padding;
+    }
+}
+@media screen and (max-width:376px) {
+    .hero{
+        padding: 0 ;
+        height: auto;
+        background: none;
+
+        .hero-img{
+            position: static;
+            width: 100%;
+        }
+        hr{display: none;}
+        .copy{
+            padding: 100px $padding-sm;
+            width: auto;
+            text-align: center;
+            h1{font-size: 2.5em; margin-top: 0; line-height: auto; line-height: 40px;}   
+            background:url(../images/bg-pattern-intro-left-mobile.svg)no-repeat left top ,
+                        url(../images/bg-pattern-intro-right-mobile.svg)no-repeat right 350px ,
+                        $Dark-Violet ; 
+        }
+    }
+}
+
+// XXXXXXXXXXXXXXXXXXXXXXXXXXXX HERO ENDS HERE XXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+// XXXXXXXXXXXXXXXXXXXXXXXXXXXX MAIN STARTS HERE XXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+.main{
+    padding: 200px $padding;
+    hr{
+        width: 13%;
+        margin: 0 0 30px 0;
+    }
+    h1{
+        font-size: 4em;
+        font-family: $display;
+        letter-spacing: 1px;
+        font-weight: 300;
+        color: $Very-Dark-Violet;
+    }
+    .about{
+        display: grid;
+        grid-template-columns:repeat(3,1fr);
+        grid-gap: 40px;
+        h3{font-family: $display;
+            letter-spacing: 1px;
+            color: $Very-Dark-Violet; 
+            font-size: 1.2em;
+        }
+        p{
+            color: #65566d;
+            font-size:.75em ;
+            font-family: $karla;
+            line-height: 20px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+    }
+    .banner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        color: white;
+        margin-top: 100px;
+        padding: 0 70px ;
+        background: url(../images/bg-pattern-how-we-work-desktop.svg) no-repeat right, $Dark-Violet;
+        h1{
+            color: white;
+            flex-basis: 51%;
+            font-size: 3em;
+            font-weight: 300;
+        }
+        .banner-btn{
+            color: white;
+            border-color: white;
+            &:hover{
+                background: white;
+                color: $Dark-Violet;
+            }
+        }
+    }
+}
+@media screen and (max-width:376px) {
+    .main{
+        text-align: center;
+        padding: 0 $padding-sm;
+        margin-bottom: 100px;
+        hr{
+            margin: 100px auto 0 auto ;
+            float: center;
+            width: 50%;    
+        }
+        h1{
+            font-size: 2.8em;
+        }
+        .about{
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3,1fr );
+            h3{
+                font-size: 1.5em;
+                font-weight: 300;
+            }
+        }
+        .banner{
+            background-image: url(../images/bg-pattern-how-we-work-mobile.svg);
+            background-position: top right;
+            padding: 50px $padding-sm;
+            justify-content: center;
+            h1{
+                font-size: 2.5em;
+                flex-basis: auto;
+            }
+        }
+    }
+}
+// XXXXXXXXXXXXXXXXXXXXXXXXXXXX MAIN ENDS HERE XXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+// XXXXXXXXXXXXXXXXXXXXXXXXXXXX FOOTER STARTS HERE XXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+footer{
+    padding:70px $padding;
+    background:url(../images/bg-pattern-footer-desktop.svg) no-repeat, $Very-Light-Gray;
+    hr{background: #d8d0dc;}
+    .top-bar{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 20px 0;
+        .social{
+            display: flex;
+            justify-content: space-between;
+            .social-link{
+                margin: 0 10px;
+                cursor: pointer;
+                width: 25px;
+            }
+        }
+    }
+    .f-info{
+        display: grid;
+        grid-template-columns: repeat(4,1fr );
+        font-family: $karla;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        .f-items.head{
+            color:#56485e;
+            margin: 20px 0;
+            &:hover{
+                text-decoration: none;
+            }
+        }
+        .f-items{
+            font-size: .8em;
+            margin: 10px 0;
+            color: $Dark-Violet;
+            font-weight: 900;
+            cursor: pointer;
+            transition: all 100ms ease-out;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
+}
+@media screen and (max-width:376px) {
+    footer{
+        padding: 60px $padding-sm;
+        background-image: url(../images/bg-pattern-footer-mobile.svg);
+        text-align: center;
+        .top-bar{
+            flex-direction: column;
+            justify-content: center;
+            .social{margin-top: 35px;}
+        }
+        .f-info{
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            .f-items{margin-bottom: 20px;}
+        }
+    }   
+}
+
+// XXXXXXXXXXXXXXXXXXXXXXXXXXXX FOOTER ENDS HERE XXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+.show{
+    display: block;
+    transition: 200ms all ease-in-out;
+}
